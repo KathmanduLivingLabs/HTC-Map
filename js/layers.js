@@ -20,92 +20,72 @@ for (any in testGeom) {
 osmUrl = 'https://a.tiles.mapbox.com/v3/poshan.i65ff4hn/{z}/{x}/{y}.png',
 osmAttribution = 'Map data &copy; 2012 OpenStreetMap contributors';
 var osm = L.TileLayer.boundaryCanvas(osmUrl, {
-    boundary: nep_latlng_array,
-    attribution: osmAttribution
+    boundary: nep_latlng_array
 }).addTo(map);
 
 //for the labels
-var District_labels = new L.layerGroup();
-District_labels.addTo(map);
-var VDC_labels = new L.layerGroup();
-//VDC_labels.addTo(map);
+var labels_layer = new L.layerGroup();
 
-var district_boundary = new L.geoJson.ajax("data/district.geojson");
-district_boundary.on('data:loaded', function(data) {
-    district_boundary.setStyle(district_boundary_styles["Default"]["style"]);
-    map.spin(false);
-    labels(data, district_boundary);
-});
+var country_boundary = new L.geoJson();
+// country_boundary.addTo(map);
+
+var zone_boundary = new L.geoJson();
+// zone_boundary.addTo(map);
+
+var district_boundary = new L.geoJson();
 district_boundary.addTo(map);
+//district_boundary.onEachFeature = labels;
 
-var vdc_boundary = new L.geoJson.ajax("data/vdc.geojson");
-vdc_boundary.on('data:loaded', function(data) {
-    vdc_boundary.setStyle(vdc_boundary_styles["Default"]["style"]);
-    map.spin(false);
-    labels(data, vdc_boundary);
-});
+var vdc_boundary = new L.geoJson();
 // vdc_boundary.addTo(map);
 
-var HTC_sites = new L.geoJson.ajax("data/htc_dummy.geojson");
-HTC_sites.on('data:loaded', function(data) {
-    HTC_sites.eachLayer(HTC_sites_styles["Default"]["style"]);
-    map.spin(false);
-});
+var HTC_sites = new L.geoJson();
 HTC_sites.addTo(map);
 
 baseLayers = {};
 
-
-
 var overlays = {
-    "layers": {
-        "OpenStreetMap": osm,
-        "District": district_boundary,
-        "VDC": vdc_boundary,
-        "HTC Sites": HTC_sites
-    },
-    "Labels": {
-        "District_labels": District_labels
-    }
+    "OpenStreetMap": osm,
+    "District": district_boundary,
+    "VDC": vdc_boundary,
+    "HTC Sites": HTC_sites,
+    "District name ": labels_layer
 };
-
-
-//label variable key must [key]_labels where key is the key defined in overlays. this is used to accesss value using string notation
-var LABELS = {
-    "VDC_labels": VDC_labels,
-    "District_labels": District_labels
-}
-// synchronize layer and label
-map.on("overlayadd", function(layer) {
-    // console.log('layer add', layer);
-    //console.log('onoverlayadd');
-    if (LABELS[layer.name + "_labels"]) {
-        map.addLayer(LABELS[layer.name + "_labels"]);
-        // overlays[layer.name + "_labels"] = LABELS[layer.name + "_labels"];
-
-        layersControlSettings.addOverlay(LABELS[layer.name + "_labels"], layer.name + "_labels", "Labels");
-    }
-})
-map.on("overlayremove", function(layer) {
-    // console.log('layer remove', layer);
-    // console.log('layer.name + "_labels" ', layer.name + "_labels");
-    // debugger;
-    if (map.hasLayer(LABELS[layer.name + "_labels"])) {
-        map.removeLayer(LABELS[layer.name + "_labels"]);
-        layersControlSettings.removeLayer(LABELS[layer.name + "_labels"], layer.name + "_labels", "Labels");
-        // console.log(LABELS[layer.name + "_labels removed"]);
-    }
-})
-
-// layers control
-layersControlSettings = L.control.groupedLayers(baseLayers, overlays, {
+layersControlSettings = L.control.layers(baseLayers, overlays, {
     collapsed: false
 });
 layersControlSettings.addTo(map);
 $('#layersControl').append(layersControlSettings.onAdd(map));
 $('.leaflet-top.leaflet-right').hide(); // temporary solution for hiding layers control
 
+//htc_dummy data
+map.spin(true);
+$.ajax({
+    dataType: "json",
+    url: "data/htc_dummy.geojson",
+    success: function(data) {
+        $(data.features).each(function(key, data) {
+            HTC_sites.addData(data);
+            map.spin(false);
+        });
 
+    }
+}).error(function() {
+    map.spin(false);
+});
+
+
+$.ajax({
+    dataType: "json",
+    url: "data/district.geojson",
+    success: function(data) {
+        $(data.features).each(function(key, data) {
+            district_boundary.addData(data);
+            district_boundary.setStyle(district_boundary_styles["Default"]["style"]);
+        });
+        onEachFeature: labels();
+    }
+});
 // $.ajax({
 //     dataType: "json",
 //     url: "data/vdc.geojson",

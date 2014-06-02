@@ -1,0 +1,107 @@
+#map{
+    width:100%;
+    height:100%;
+}
+
+.mapBox{
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+    padding: 0px;
+}
+.panel{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    width: initial;
+    background-color: initial;
+    border: none;
+    box-shadow:none;
+    padding: 6px 6px 4px 6px;
+}
+.panel>div>div{
+    margin-bottom:2px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 2px rgba(100,100,50,0.7);
+    padding: 6px 10px 6px 6px;
+    background-color: #ffffff;
+}
+
+#layersControl>div{
+    width:325px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel>div>.control-styles{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+
+
+.trigger{
+    width: 305px;
+}
+.trigger:hover{
+    cursor: pointer;
+}
+.trigger>div{
+    font-family: "Lucida Grande", "Verdana", "sans-serif";
+    font-style: normal;
+    float: right;
+    
+    font-size: 9pt;
+    color: #eeeeee;
+    
+    width: 14pt;
+    line-height: 12pt;
+    border-radius:10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #eeeeee;
+    text-align: center;
+    padding-right:1px;
+}
+
+
+.trigger>div.lever.off:after{
+    content: "+";
+}
+.trigger>div.lever.on:after{
+    content: "-";
+}
+.trigger>div.lever:hover{
+    color: rgba(100,50,0,0.5);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+}
+.trigger>div.lever:active{
+    color: rgba(100,0,0,0.5);
+    box-shadow: 0px 0px 2px rgba(100,0,0,0.2) inset;
+}
+.trigger>div.lever.on{
+    box-shadow: 0px 0px 2px rgba(100,0,0,0.2) inset;
+}
+
+.styleChooser{
+    width: 325px;
+    font-weight: 700;
+}
+#styleChooser>div>button{
+    margin-left:20px;
+    font-weight: normal;
+}
+
+#zoom{
+    position: absolute;
+    top: 67px;
+    left: 5px;
+    z-index: 1;
+}
+
+
+
