@@ -24,13 +24,7 @@ function style_htc(marker) {
 }
 
 function style_htc_default(marker) {
-    var HTC_icon = L.icon({
-        iconUrl: 'img/htc.png',
-        iconSize: [28, 25], // size of the icon
-        // iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-        popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-    return marker.setIcon(HTC_icon)
+    return marker.setIcon(new L.Icon.Default())
 }
 
 // arrange styles to groups
@@ -55,5 +49,28 @@ HTC_sites_styles = {
     "Marker": {
         "style": style_htc,
         "legend": "This is HTC Sites Marker Legend"
+    }
+}
+/*
+Styles will be used to generate the UI, define styles separately
+ */
+styles = {
+    "district_boundary_styles": {
+        "geometry": "polygon",
+        "styles": district_boundary_styles,
+        "layer": district_boundary,
+        "display": "District"
+    },
+    "vdc_boundary_styles": {
+        "geometry": "polygon",
+        "styles": vdc_boundary_styles,
+        "layer": vdc_boundary,
+        "display": "VDC"
+    },
+    "HTC_sites_styles": {
+        "geometry": "point",
+        "styles": HTC_sites_styles,
+        "layer": HTC_sites,
+        "display": "HTC Sites"
     }
 }

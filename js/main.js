@@ -15,8 +15,8 @@ var legend = L.control({
 legend.onAdd = function(map) {
     this._div = L.DomUtil.create('div', 'info1'); // create a div with a class "info1"
     this._legends = {};
-    for (layer in STYLES) {
-        this._legends[layer] = STYLES[layer]['styles']['Default']['legend'];
+    for (layer in styles) {
+        this._legends[layer] = styles[layer]['styles']['Default']['legend'];
     }
     this.update(this._legends);
     return this._div;
@@ -67,7 +67,7 @@ function onEachFeature(feature, layer) {
 
 function fullextent() {
     var nep_center = L.latLng(28.425, 84.435);
-    var zoom_level = 7;
+    var zoom_level = 7.4;
     map.setView(nep_center, zoom_level);
 
     /*
