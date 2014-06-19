@@ -108,29 +108,45 @@
     font-weight: normal;
 }
 
+/**legend**/
 .leaflet-bottom.leaflet-left .info1.leaflet-control{
     margin-bottom: 27px;
     border-radius: 6px;
+    max-width: 160px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding:10px;
 }
 .leaflet-bottom.leaflet-left .info1.leaflet-control>h3{
     margin-top: 0px;
+    font-size: 14pt;
+    width: 300px;
+    text-align: center;
 }
-.leaflet-bottom.leaflet-left .info1.leaflet-control>img{
-    padding: 3px;
-    margin-top: 5px;
-    margin-right: 10px;
-    margin-bottom: 2px;
+.leaflet-bottom.leaflet-left .info1.leaflet-control img{
+    padding : 3px;
+    margin-top : 5px;
+    margin-right : 10px;
+    margin-bottom : 2px;
 }
+.leaflet-bottom.leaflet-left .info1.leaflet-control>div{
+    min-width: 136px;
+    border-radius : 6px;
+    border: #eeeeee thin solid;
+    margin: 4px 4px 0px 0px;
+}
+/****/
+
+/**district info popup**/
+#popup td{
+    border: #eeeeee thin solid;
+}
+/****/
 
 #zoom{
-    position: absolute;
-    top: 107px;
-    left: 10px;
-    z-index: 1;
     padding: 3px;
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.65)
 }
 #zoom:hover{
     cursor: pointer;
@@ -184,3 +200,21 @@ path.leaflet-clickable{
     font-size: 10pt;
     text-shadow:0px 0px 0.5px rgba(0,0,0,0.4);
 }
+
+/**district popup**/
+#popup tr{
+    font-weight: bold;
+}
+#popup tr.sublist{
+    font-weight: normal;
+    font-style: italic;
+}
+#popup tr.sublist td{
+    border-top: none;
+    border-bottom: none;
+    padding-left: 20px;
+}
+#popup tr.listitem.expandable td{
+    border-bottom: none;
+}
+/****/
