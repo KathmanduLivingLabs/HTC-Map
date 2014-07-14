@@ -362,15 +362,17 @@ div.row{
 #disclaimer{
     display: inline-block;
     box-sizing: border-box;
-    font-size:12pt;
+   /* font-size:12pt;*/
+font-size:16pt;
     background-color:rgba(255,255,255,0.7);
     border: #888888 solid 2px;
     pointer-events:auto;
-    margin-top: -30pt;
-    margin-right: -60pt;
+   /* margin-top: -30pt;
+    margin-right: -60pt;*/
 }
 #disclaimer>img{
-    height:14pt;
+   /* height:14pt;*/
+height:16pt;
 }
 
 #disclaimerMsg{
@@ -400,149 +402,13 @@ div.row{
     top:0;
     left:0;
     width:100%;
-    height:100%;
-    
-    background:-moz-linear-gradient(45deg,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black
-        );
-    
-    background:-webkit-linear-gradient(45deg,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black
-        );
-    
-    background:-o-linear-gradient(45deg,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black
-        );
-    
-    background:-ms-linear-gradient(45deg,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black,
-        white, black, white, black, white, black, white, black
-        );
-    
-    opacity:0.1;
+    height:100%;    
+    background: -moz-repeating-radial-gradient(#ffffff 9px, #664400 10px, #ffffff 12px);
+    background: -webkit-repeating-radial-gradient(#ffffff 9px, #664400 10px, #ffffff 12px);
+    background: -o-repeating-radial-gradient(#ffffff 9px, #664400 10px, #ffffff 12px);
+    background: -ms-repeating-radial-gradient(#ffffff 9px, #664400 10px, #ffffff 12px);
+    background: repeating-radial-gradient(#ffffff 9px, #664400 10px, #ffffff 12px);
+    opacity:0.2;
     z-index:100000;
 }
 
